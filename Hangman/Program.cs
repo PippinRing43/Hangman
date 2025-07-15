@@ -2,9 +2,24 @@
 {
     internal class Program
     {
+        static int guesses = 0;
+        static Random rand = new Random();
+        static string[] words =
+        {
+            "jesus",//words idk what
+            "hhhhhhhhhhhhhhhh"
+        };
+        static string randomWord;
+        static string empty;
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+            randomWord = words[rand.Next(0, words.Length)];
+            empty = "";
+            for (int i = 0; i < randomWord.Length; i++)
+            {
+                empty += '_';
+            }
             Console.WriteLine(@"
 
              _                                             
@@ -21,14 +36,18 @@
 
 
             ");
-            Console.WriteLine(HangmanArt.graphics[0]);
-            Console.WriteLine("+---+\r\n  |   |\r\n  O   |\r\n /|\\  |\r\n / \\  |\r\n      |\r\n=========");
-            Console.WriteLine("press enter to start");
+
+            //Console.WriteLine(HangmanArt.graphics[0]);
+            Console.WriteLine("press enter to start...");
             Console.ReadLine();
+            Start();
+        }
+
+        static void Start()
+        {
             Console.Clear();
-            Console.WriteLine("");
-
-
+            Console.WriteLine($"A word has been selected. It has {randomWord.Length} letters");
+            Console.WriteLine(empty);
         }
     }
 }
