@@ -21,6 +21,7 @@
 
 
             ");
+            Console.WriteLine(HangmanArt.graphics[0]);
             Console.WriteLine("+---+\r\n  |   |\r\n  O   |\r\n /|\\  |\r\n / \\  |\r\n      |\r\n=========");
             Console.WriteLine("press enter to start");
             Console.ReadLine();
