@@ -6,8 +6,35 @@
         static Random rand = new Random();
         static string[] words =
         {
-            "jesus",//words idk what
-            "hhhhhhhhhhhhhhhh"
+            "abandon",
+            "ability",
+            "about",
+            "above",
+            "academic",
+            "accept",
+            "accompany",
+            "administration",
+            "agricultural",
+            "ally",
+            "also",
+            "anymore",
+            "anyone",
+            "apple",
+            "average",
+            "architect",
+            "axe",
+
+            "banana",
+            "belief",
+            "big",
+            "blanket",
+            "bone",
+            "book",
+            "breath",
+            "breathe",
+            "bullet",
+
+            "capture"
         };
         static string randomWord;
         static string empty;
@@ -46,8 +73,42 @@
         static void Start()
         {
             Console.Clear();
-            Console.WriteLine($"A word has been selected. It has {randomWord.Length} letters");
+            Console.WriteLine($"A word has been selected. It has {randomWord.Length} letters\n");
             Console.WriteLine(empty);
+
+            while (true)
+            {
+                string userinput;
+                do
+                {
+                    Console.WriteLine("Guess a word or a letter.");
+                    userinput = Console.ReadLine().ToLower().Trim();
+                } while (userinput.Length > 0);
+
+                if (userinput.Length == 1)
+                {
+                    if (randomWord.Contains(userinput)) 
+                    {
+                        
+                    }
+                }
+                else if (userinput.Length > 1)
+                {
+                    if (userinput == randomWord)
+                    {
+                        End(true);
+                        break;
+                    }
+                }
+            }
+        }
+
+        static void End(bool win)
+        {
+            if (win)
+            {
+                Console.WriteLine($"Well done! You guessed the word: {randomWord} in {guesses} guesses");
+            }
         }
     }
 }
